@@ -18,7 +18,7 @@ let isFirstLoad = true;
 let clickCount = 0;
 const maxClicks = 3;
 
-let isPannelComplete = [false, false, false, false];
+let isPannelComplete = [false, true, false, false];
 
 function goToSection(index) {
 
