@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #e9e9e9;
+  padding: 40px;
+}
+
+.cv {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.sidebar {
+  background: #3b3b3b;
+  color: #ffffff;
+  padding: 30px 20px;
+}
+
+
+
+.profile-photo img{
+ width: 170px;
+  height: auto;
+  background: #1f4f99;
+  border-radius: 40%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+   object-fit: cover;
+}
+
+.name {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.role {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.sidebar-section {
+  margin-bottom: 25px;
+}
+
+.sidebar-section h2 {
+  font-size: 14px;
+  border-bottom: 2px solid #1f4f99;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.sidebar-section ul {
+  list-style: none;
+  font-size: 14px;
+}
+
+.sidebar-section li {
+  margin-bottom: 8px;
+}
+
+.sidebar i {
+  margin-right: 8px;
+  color: #1f4f99;
+}
+
+.content {
+  padding: 40px;
+}
+
+.content section {
+  margin-bottom: 35px;
+}
+
+.content h2 {
+  font-size: 18px;
+  color: #1f4f99;
+  border-bottom: 2px solid #1f4f99;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.content h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-size: 13px;
+  color: #636363;
+}
+
+.content ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.content li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.content p {
+  font-size: 14px;
+  line-height: 1.6;
+}

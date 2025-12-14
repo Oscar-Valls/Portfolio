@@ -285,6 +285,72 @@ body.on .bulb {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+.panel.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  background: #bdbdbd;
+  color: #222;
+}
+
+.panel.contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.panel.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.panel.contact li {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.panel.contact li:hover a {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.panel.contact li i {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+@media (max-width: 600px) {
+  .panel.contact h1 {
+    font-size: 2rem;
+  }
+
+  .panel.contact li {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .panel.contact li i {
+    font-size: 1.3rem;
+  }
+}
+
 @media (max-width: 600px) {
   .works {
     padding: 2rem 1rem;
