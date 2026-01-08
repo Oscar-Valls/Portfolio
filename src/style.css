@@ -391,7 +391,6 @@ body.on .bulb {
 .card-buttons {
   margin-top: 8px;
   display: flex;
-  gap: 6px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -401,7 +400,6 @@ body.on .bulb {
   left: 50%;
   bottom: 12px;
   transform: translateX(-50%);
-  z-index: 2;
 }
 
 .rank-btn {
@@ -483,7 +481,6 @@ body.on .bulb {
     height: 26px;
   }
 
-  /* Botones fijos: reducir tamaño y mover para que molesten menos */
   .btn-next, .btn-previous {
     padding: 0.55rem 1rem;
     font-size: 0.95rem;
@@ -491,16 +488,16 @@ body.on .bulb {
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
   }
   .btn-next {
-    left: 12px; /* mantener a la izquierda */
-    bottom: 12px; /* acercar al borde pero sin tapar contenido por el padding-bottom anterior */
+    left: 12px; 
+    bottom: 12px; 
   }
   .btn-previous {
-    right: 12px; /* situar a la derecha en móvil */
+    right: 12px; 
     left: auto;
     bottom: 12px;
   }
 
-  /* ...existing mobile rules... */
+
   .panel.contact h1 { font-size: 2rem; }
   .panel.contact li { font-size: 1.1rem; padding: 0.5rem 1rem; }
   .panel.contact li i { font-size: 1.3rem; }

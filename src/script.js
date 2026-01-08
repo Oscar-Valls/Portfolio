@@ -291,7 +291,8 @@ function showWorkKey() {
   const workKey = document.getElementById("works_key");
   workKey.innerHTML = "🗝️";
   workKey.style.position = "absolute";
-
+  workKey.style.zIndex = "10000"
+  
   const keySize = Math.min(window.innerWidth, window.innerHeight) * 0.5;
 
   gsap.to(workKey, {
