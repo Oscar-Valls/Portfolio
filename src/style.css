@@ -336,7 +336,40 @@ body.on .bulb {
   color: #007bff;
 }
 
-@media (max-width: 600px) {
+.works .cards-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  
+
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.works .card {
+  background: white;
+  border-radius: 16px;
+  padding: 1rem;
+  height: 20vh;
+  width: 18vw;
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  transition: transform .25s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+@media (max-width: 800px) {
   .panel.contact h1 {
     font-size: 2rem;
   }
@@ -349,15 +382,15 @@ body.on .bulb {
   .panel.contact li i {
     font-size: 1.3rem;
   }
-}
 
-@media (max-width: 600px) {
-  .works {
-    padding: 2rem 1rem;
+  #keycode {
+    position: static;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem; 
+    width: 100%;
   }
-  .work-card img {
-    height: 120px;
-  }
+
+
   .about {
     padding: 2rem;
     align-items: center;
@@ -367,6 +400,17 @@ body.on .bulb {
     justify-content: center;
   }
   .about h2 {
-    font-size: 2rem;
+    font-size: 1rem;
+  }
+  .about p {
+    font-size: 0.75rem;
+  }
+  .about h3 {
+    font-size: 1rem;
+  }
+  .about li{
+    font-size: 0.75rem;
   }
 }
+
+

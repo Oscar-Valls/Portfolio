@@ -21,7 +21,7 @@ let clickCount = 0;
 const maxClicks = 3;
 let terminalCode = null
 
-let isPannelComplete = [false, true, false, false];
+let isPannelComplete = [false, false, false, false];
 
 function goToSection(index) {
 
