@@ -165,7 +165,7 @@ body.on .bulb {
 }
 
 .about h2 {
-  font-size: 2.5rem;
+
   margin: 0;
   color: #222;
 }
@@ -416,6 +416,9 @@ body.on .bulb {
   box-sizing: border-box;
 }
 
+.about h3{
+  margin: 0;
+}
 .rank-btn:hover {
   background: #f4f4f4;
   transform: translateY(-1px);
