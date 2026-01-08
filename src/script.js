@@ -12,7 +12,6 @@ const pista1 = document.getElementById("pista1")
 const keycode = document.getElementById("keycode")
 const keygeneratezone = document.getElementById("keygenzone")
 
-
 let current = 0;
 let isAnimating = false;
 let siteOn = false;
@@ -234,3 +233,85 @@ keygeneratezone.style.position = "absolute";
   });
 }
 
+function shuffleCards() {
+  const container = document.querySelector('.cards-container');
+  if (!container) return;
+  const items = Array.from(container.querySelectorAll('.card'));
+  items.forEach(item => item.style.order = ''); // resetear orden
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  items.forEach(item => container.appendChild(item));
+}
+
+function initCardButtons() {
+  const container = document.querySelector('.cards-container');
+  if (!container) return;
+
+  container.addEventListener('click', (e) => {
+    const btn = e.target.closest('.rank-btn');
+    if (!btn) return;
+
+    const card = btn.closest('.card');
+    if (!card) return;
+
+    const rank = Number(btn.dataset.rank) || 1;
+
+    card.style.order = rank;
+
+    card.querySelectorAll('.rank-btn').forEach(b => b.classList.toggle('active', b === btn));
+
+    checkCardsOrder();
+  });
+}
+
+function checkCardsOrder() {
+  const cards = Array.from(document.querySelectorAll('.cards-container .card'));
+  if (!cards.length) return false;
+
+  const sortedCards = cards.slice().sort((a, b) => {
+    const orderA = Number(a.style.order) || 0;
+    const orderB = Number(b.style.order) || 0;
+    return orderA - orderB;
+  });
+
+  const years = sortedCards.map(c => Number(c.dataset.date));
+
+  const isOrdered = years.every((year, i) => i === 0 || year > years[i - 1]);
+
+  if (isOrdered && !isPannelComplete[1]) showWorkKey();
+
+  return isOrdered;
+}
+
+function showWorkKey() {
+  isPannelComplete[1] = true;
+
+  const workKey = document.getElementById("works_key");
+  workKey.innerHTML = "🗝️";
+  workKey.style.position = "absolute";
+
+  const keySize = Math.min(window.innerWidth, window.innerHeight) * 0.5;
+
+  gsap.to(workKey, {
+    fontSize: keySize,
+    rotation: 700,
+    duration: 1.25,
+    ease: "power2.inOut",
+    onComplete: () => {
+      workKey.style.display = "none";
+      alert("¡Has conseguido la llave!");
+      updateNavButtons();
+    }
+  });
+}
+
+function initCardsModule() {
+  shuffleCards();
+  initCardButtons();
+
+  checkCardsOrder();
+}
+
+initCardsModule();

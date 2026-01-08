@@ -241,6 +241,7 @@ body.on .bulb {
     font-size: 2.2rem;
     font-weight: 700;
     margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 
@@ -358,30 +359,151 @@ body.on .bulb {
   background: white;
   border-radius: 16px;
   padding: 1rem;
-  height: 20vh;
+  min-height: 180px;
   width: 18vw;
   box-shadow: 0 12px 28px rgba(0,0,0,.12);
   transition: transform .25s ease, box-shadow .25s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  position: relative;
+  padding-bottom: 56px;
 }
 
+.card h2 {
+  font-size: 1rem;
+  color: #222;
+ text-align: center;
+}
 
+.card h1  {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.card.dragging {
+  opacity: 0.5;
+  border: 2px dashed #007bff;
+  transform: scale(0.95);
+}
+
+.card-buttons {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.rank-btn {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 28px;
+  height: 28px;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.rank-btn:hover {
+  background: #f4f4f4;
+  transform: translateY(-1px);
+}
+
+.rank-btn.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
 
 @media (max-width: 800px) {
-  .panel.contact h1 {
-    font-size: 2rem;
+  .works {
+    padding: 2rem 1rem;
+    padding-top: 3rem; 
+    padding-bottom: 120px; 
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto; 
+    max-height: calc(100vh - 80px);
+    box-sizing: border-box;
   }
 
-  .panel.contact li {
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+  .works .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 0.5rem; 
+    padding-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .panel.contact li i {
-    font-size: 1.3rem;
+  .works .card {
+    width: 100%;
+    max-width: 420px;
+    min-width: 0;
+    height: auto;
+    padding: 0.75rem;
+    padding-bottom: 12px;
+    min-height: 0;
   }
+
+  .card-buttons {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    padding-bottom: 0;
+  }
+
+  .card-buttons {
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .rank-btn {
+    padding: 3px 6px;
+    font-size: 0.75rem;
+    min-width: 24px;
+    height: 26px;
+  }
+
+  /* Botones fijos: reducir tamaño y mover para que molesten menos */
+  .btn-next, .btn-previous {
+    padding: 0.55rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  }
+  .btn-next {
+    left: 12px; /* mantener a la izquierda */
+    bottom: 12px; /* acercar al borde pero sin tapar contenido por el padding-bottom anterior */
+  }
+  .btn-previous {
+    right: 12px; /* situar a la derecha en móvil */
+    left: auto;
+    bottom: 12px;
+  }
+
+  /* ...existing mobile rules... */
+  .panel.contact h1 { font-size: 2rem; }
+  .panel.contact li { font-size: 1.1rem; padding: 0.5rem 1rem; }
+  .panel.contact li i { font-size: 1.3rem; }
 
   #keycode {
     position: static;
@@ -389,7 +511,6 @@ body.on .bulb {
     margin-bottom: 3.5rem; 
     width: 100%;
   }
-
 
   .about {
     padding: 2rem;
@@ -411,6 +532,31 @@ body.on .bulb {
   .about li{
     font-size: 0.75rem;
   }
+
+  .card p{
+    font-size: 0.75rem;
+  }
+  .card h2{
+    font-size: 0.75rem;
+  }
 }
 
+
+
+@media (min-width: 800px) and (max-width: 1400px){
+  .works .card {
+    width: 22vw;
+  }
+
+  .card p{
+    font-size: 0.9rem;
+  }
+  .card h2{
+    font-size: 1rem;
+  }
+
+
+
+
+}
 
